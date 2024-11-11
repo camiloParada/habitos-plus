@@ -1,0 +1,7 @@
+{
+  "name": "habitosPlus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
