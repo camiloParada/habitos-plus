@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Habit {
   id: number;
@@ -19,7 +20,7 @@ export class HomePage {
   habits: Habit[] = [
     {
       id: 1,
-      name: 'Crear Hábito',
+      name: 'Estudio',
       icon: 'brain-outline',
       meta: 'Meta: 1 por día',
       progress: 75,
@@ -91,9 +92,13 @@ export class HomePage {
     }
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   segmentChanged(event: any) {
     this.selectedTab = event.detail.value;
+  }
+
+  goToAgregar() {
+    this.router.navigate(['/create-habit']);
   }
 } 

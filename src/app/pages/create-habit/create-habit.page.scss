@@ -1,0 +1,36 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px  ;
+  }
+  
+  .image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .title-categoria{
+    width: 100%;
+  }
+
+  .image-upload ion-icon {
+    font-size: 80px;
+    color: #7c7c7c;
+  }
+  
+  .image-upload p {
+    color: #7c7c7c;
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+  

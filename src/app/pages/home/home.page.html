@@ -1,16 +1,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Home</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="ellipsis-horizontal"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-segment [(ngModel)]="selectedTab" (ionChange)="segmentChanged($event)">
+  <ion-segment [(ngModel)]="selectedTab" (ionChange)="segmentChanged($event)" scrollable>
     <ion-segment-button value="home">
       <ion-label>Home</ion-label>
     </ion-segment-button>
@@ -23,7 +18,7 @@
     <ion-segment-button value="statistics">
       <ion-label>Estadísticas</ion-label>
     </ion-segment-button>
-  </ion-segment>
+  </ion-segment>  
 
   <div class="habit-grid">
     <ion-card *ngFor="let habit of habits" class="habit-card">
@@ -42,7 +37,7 @@
   </div>
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button (click)="goToAgregar()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
