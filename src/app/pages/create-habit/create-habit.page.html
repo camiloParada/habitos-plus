@@ -1,13 +1,56 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>CreateHabit</ion-title>
+    <ion-title>Nuevo hábito</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">CreateHabit</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-segment [(ngModel)]="selectedTab">
+    <ion-segment-button value="home">
+      <ion-label>Home</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="habits">
+      <ion-label>Hábitos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="progress">
+      <ion-label>Progreso</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reminders">
+      <ion-label>Recordatorios</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="form-container">
+    <div class="image-upload">
+      <ion-icon name="image-outline" size="large"></ion-icon>
+      <p>Seleccionar imagen</p>
+    </div>
+
+    <ion-item lines="none" class="w-100">
+      <ion-label position="stacked">Nombre:</ion-label>
+      <ion-input placeholder="Ingrese el nombre del hábito"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Categoría:</ion-label>
+      <div class="categories">
+        <ion-chip *ngFor="let category of categories" [outline]="true">
+          <ion-label>{{ category }}</ion-label>
+        </ion-chip>
+        <ion-chip outline>
+          <ion-label>Nueva Categoría</ion-label>
+        </ion-chip>
+      </div>
+    </ion-item>
+
+    <div class="w-100">
+      <ion-item lines="none">
+        <ion-label position="stacked">Descripción:</ion-label>
+        <ion-textarea placeholder="Ingrese una descripción"></ion-textarea>
+      </ion-item>
+    </div>
+  </div>
 </ion-content>

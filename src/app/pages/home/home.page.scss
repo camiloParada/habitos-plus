@@ -42,6 +42,11 @@
   ion-segment {
     padding: 8px;
   }
+
+  ion-segment-button {
+    min-width: 100px; 
+    white-space: nowrap;
+  }
   
   ion-fab-button {
     --background: var(--ion-color-primary);
