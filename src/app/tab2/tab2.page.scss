@@ -1,0 +1,21 @@
+.tabs {
+    --indicator-color: var(--ion-color-primary);
+    text-align: center;
+  }
+  
+  ion-item {
+    --background: #f5f5fa;
+    --border-color: transparent;
+    margin: 5px 0;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  ion-icon {
+    color: var(--ion-color-primary);
+  }
+  
+  ion-tab-bar {
+    --background: #f5f5fa;
+  }
+  
