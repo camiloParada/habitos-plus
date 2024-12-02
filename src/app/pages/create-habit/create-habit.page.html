@@ -24,33 +24,49 @@
   </ion-segment>
 
   <div class="form-container">
-    <div class="image-upload">
-      <ion-icon name="image-outline" size="large"></ion-icon>
-      <p>Seleccionar imagen</p>
-    </div>
-
-    <ion-item lines="none" class="w-100">
-      <ion-label position="stacked">Nombre:</ion-label>
-      <ion-input placeholder="Ingrese el nombre del hábito"></ion-input>
-    </ion-item>
-
-    <ion-item lines="none">
-      <ion-label position="stacked">Categoría:</ion-label>
-      <div class="categories">
-        <ion-chip *ngFor="let category of categories" [outline]="true">
-          <ion-label>{{ category }}</ion-label>
-        </ion-chip>
-        <ion-chip outline>
-          <ion-label>Nueva Categoría</ion-label>
-        </ion-chip>
+    <form (ngSubmit)="saveHabit()">
+      <div class="image-upload">
+        <ion-icon name="image-outline" size="large"></ion-icon>
+        <p>Seleccionar imagen</p>
       </div>
-    </ion-item>
 
-    <div class="w-100">
-      <ion-item lines="none">
-        <ion-label position="stacked">Descripción:</ion-label>
-        <ion-textarea placeholder="Ingrese una descripción"></ion-textarea>
+      <ion-item lines="none" class="w-100">
+        <ion-label position="stacked">Nombre:</ion-label>
+        <ion-input 
+          placeholder="Ingrese el nombre del hábito" 
+          [(ngModel)]="habit.name" 
+          name="name"
+          required>
+        </ion-input>
       </ion-item>
-    </div>
+
+      <ion-item lines="none">
+        <ion-label position="stacked">Categoría:</ion-label>
+        <div class="categories">
+          <ion-chip 
+            *ngFor="let category of categories" 
+            [outline]="true"
+            (click)="selectCategory(category)">
+            <ion-label>{{ category }}</ion-label>
+          </ion-chip>
+          <ion-chip outline>
+            <ion-label>Nueva Categoría</ion-label>
+          </ion-chip>
+        </div>
+      </ion-item>
+
+      <div class="w-100">
+        <ion-item lines="none">
+          <ion-label position="stacked">Descripción:</ion-label>
+          <ion-textarea 
+            placeholder="Ingrese una descripción" 
+            [(ngModel)]="habit.description" 
+            name="description">
+          </ion-textarea>
+        </ion-item>
+      </div>
+
+      <ion-button expand="block" type="submit">Guardar Hábito</ion-button>
+    </form>
   </div>
 </ion-content>
