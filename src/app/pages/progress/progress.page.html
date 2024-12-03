@@ -1,13 +1,53 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Progress</ion-title>
+    <ion-title>Progreso de Hábito</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Progress</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ habitName }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Progreso semanal</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas baseChart
+              [data]="progressData"
+              [type]="chartType"
+              [options]="chartOptions">
+      </canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Días cumplidos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas baseChart
+              [data]="doughnutChartData"
+              [type]="doughnutChartType">
+      </canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Progreso Diario</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas baseChart
+              [data]="barChartData"
+              [labels]="barChartLabels"
+              [type]="barChartType"
+              [options]="barChartOptions">
+      </canvas>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

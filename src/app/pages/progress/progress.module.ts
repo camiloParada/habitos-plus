@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { BaseChartDirective } from 'ng2-charts';
+
 import { ProgressPageRoutingModule } from './progress-routing.module';
 
 import { ProgressPage } from './progress.page';
@@ -13,8 +15,9 @@ import { ProgressPage } from './progress.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ProgressPageRoutingModule
+    ProgressPageRoutingModule,
+    BaseChartDirective,
   ],
-  declarations: [ProgressPage]
+  declarations: [ProgressPage],
 })
 export class ProgressPageModule {}
