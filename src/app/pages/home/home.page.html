@@ -5,20 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-segment [(ngModel)]="selectedTab" (ionChange)="segmentChanged($event)" scrollable>
-    <ion-segment-button value="home">
-      <ion-label>Home</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="habits">
-      <ion-label>Hábitos</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="progress">
-      <ion-label>Progreso</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="statistics">
-      <ion-label>Estadísticas</ion-label>
-    </ion-segment-button>
-  </ion-segment>  
+    <ion-segment scrollable>
+      <ion-segment-button routerLink="/home" value="home">
+        <ion-label>Home</ion-label>
+      </ion-segment-button>
+      <ion-segment-button routerLink="/habits" value="habits">
+        <ion-label>Hábitos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button routerLink="/progress" value="progress">
+        <ion-label>Progreso</ion-label>
+      </ion-segment-button>
+      <ion-segment-button routerLink="/statics" value="statistics">
+        <ion-label>Estadísticas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
 
   <div class="habit-grid">
     <ion-card *ngFor="let habit of habits" class="habit-card">
